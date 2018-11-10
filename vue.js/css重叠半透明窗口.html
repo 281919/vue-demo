@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  div.window{
+    position:absolute;
+    width:300px;height:200px;
+    border:3px outset gray
+  }
+
+  div.titlebar{
+    position:absolute;
+    top: 0px;height: 18px;
+    width: 290px;
+    background-color: #aaaaaa;
+    border-bottom: 2px groove gray;
+    padding: 3px 5px 2px 5px;
+    font: bold 11pt sans-serif;
+  }
+  div.content{
+    position: absolute;
+    top:25px;
+    height: 165px;
+    width: 290px;
+    padding: 5px;
+    overflow: auto;
+    background-color: #fff;
+  }
+  div.translucent{
+    opacity: .75;
+    filter: alpha(opacity = 75);
+  }
+</style>
+<body>
+  
+<div class="window" style = "left: 10px ; top : 10px; z-index: 10;" >
+<div class="titlebar">Test window</div>
+<div class="content">
+  1<br>
+  2<br>
+  3<br>
+  4<br>
+  5<br>
+  6<br>
+  7<br>
+  8<br>
+  9<br>
+  0<br>
+  1<br>
+  2<br>
+  3<br>
+  4<br>
+  5<br>
+  6<br>
+  7<br>
+  8<br>
+  9<br>
+  0<br>
+</div>
+</div>
+
+<div class="window" style = 'left: 75px; top: 110px; z-index: 20;'>
+<div class="titlebar">Another Window</div>
+<div class='content translucent'
+      style = 'background-color:#ccc; font-weight:bold;'>
+
+      This is another Wondow
+</div>
+
+</body>
+</html>

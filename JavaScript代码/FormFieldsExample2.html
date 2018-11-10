@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<html></html>
+<head>
+<title>Frameset Example</title>
+
+<style type = "text/css">
+    .colorGreen{
+        font-weight :bold;
+        color: #0f0;
+    }
+</style>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+<form method = "post" acction = "javascript:alert('Form submitted!')" id = "myForm">
+
+    <ul>
+        <li><input type = "radio" name = "color" value = "red">Red</li>
+        <li><input type = "radio" name = "color" value = "green">Green</li>
+        <li><input type = "radio" nmae = "color" value = "blue" >Blue</li>
+    </ul>
+
+    <input type = "submit" value = "Submit Form" name = "submit-btn">
+    <button type = "button"> Whatever </button>
+
+</form>
+
+   
+    
+    
+<script>
+
+(function (){
+    var form = document.forms[0];
+
+    EventUtil.addHandler(form, "submit", function(event){
+        event = EventUtil.getEvent(event);
+        var target =EventUtil.getTarget(event);
+        var btn = target.elements["submit-btn"];
+
+        btn.disabled = true;
+    });
+})();
+   
+    
+</script>
+
+  
+
+
+</body>
+</html>

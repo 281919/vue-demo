@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frameset Example</title>
+
+
+</head>
+
+
+
+
+<body>
+
+<input type = "button" value = "Click Me" id = "myBtn">
+<!-- <a href = "http://www.jxufe.edu.cn" id = "myLink">Click Me</a> -->
+<script>
+    //DOMO 级事件处理程序
+// var btn = document.getElementById("myBtn");
+
+// btn.onclick = function(){
+//     alert("Clicked");
+// }; 
+    //DOM2级事件处理程序
+// var btn = document.getElementById("myBtn");
+
+// btn.addEventListener("click", function(){
+//     alert(this.id);
+// }, false);
+
+// btn.addEventListener("click", function(){
+//     alert("Hello word!");
+// }, false);
+
+// var btn = document.getElementById("myBtn");
+
+// var handler = function(){
+//     alert(this.id);
+// }
+
+// btn.addEventListener("click", handler, false);
+
+
+//mouseover 事件 ：当按钮移动到按钮上面
+
+// var removeBtn = document.getElementById("myRemoveBtn");
+
+// removeBtn.onclick = function(){
+//     btn.removeEventListener("click", handler, false);
+// }; 
+
+// var btn = document.getElementById("myBtn");
+
+// var handler = function(event){
+//     switch(event.type){
+//         case "click":
+//             alert("Clicked");
+//             break;
+//         case "mouseover":
+//             event.target.style.backgroundColor = "red";
+//             break;
+
+//         case "mouseout":
+//             event.target.style.backgroundColor = "";
+//             break;
+//     }
+// };
+
+// btn.onclick = handler;
+// btn.onmouseover = handler;
+// btn.onmouseout = handler;
+
+
+
+
+//preventDefault()阻止特定事件的默认行为,如阻止链接导航这一默认行为
+// var link = document.getElementById("myLink");
+
+// link.onclick = function(event){
+//     event.preventDefault();
+// };
+
+//stopPropagation() 停止事件在 DOM 层次中的传播，避免触发注册在 document.body 上的事件
+// var btn = document.getElementById("myBtn");
+// btn.onclick = function(event){
+//     alert("Clicked");
+//     event.stopPropagation();
+// };
+
+// document.body.onclick = function(event){
+//     alert("Body clicked");
+// };
+
+
+
+
+//先捕获（eventPhase = 1）,再“处于目标”（2），后冒泡（3）
+// var btn = document.getElementById("myBtn");
+
+// btn.onclick = function(event){
+//     alert(event.eventPhase);
+// };             //   2
+
+// document.body.addEventListener("click", function(event){
+//     alert(event.eventPhase);
+// }, true);       //1
+
+// document.body.onclick = function(event){
+//     alert(event.eventPhase);
+// };             //3
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+  
+
+
+</body>
+</html>

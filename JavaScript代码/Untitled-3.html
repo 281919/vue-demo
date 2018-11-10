@@ -1,0 +1,19 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Text Node Example</title>
+</head>
+<body>
+  
+  <script>
+
+function outer (){
+    inner();
+}
+function inner (){ 
+    console.log(inner.caller);
+}
+outer();
+  </script>
+</body>
+
+</html>

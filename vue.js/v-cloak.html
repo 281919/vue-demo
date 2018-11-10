@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script src="vue.min.js"></script>
+<style>
+  [v-cloak]{
+    display:none;
+  }
+</style>
+
+
+
+<body>
+  //v-cloak 配合[v-cloak]{ display: none;},防止页面闪烁
+<div id="app">
+<span v-cloak>{{name}}</span>
+
+</div>
+  
+</body>
+
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      name : '江西财经大学'
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<html></html>
+<head>
+<title>Frameset Example</title>
+
+<style type = "text/css">
+    .message{
+        font-weight :bold;
+        color: #0f0;
+    }
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+    <input type = "button" value = "changeMessage" onclick = "addNode()">
+
+
+
+<script>
+
+function addNode(){
+    var element = document.createElement("div");
+
+    element.className = "message";
+
+    var textNode = document.createTextNode("Hello world");
+
+    element.appendChild(textNode);
+
+    var another = document.createTextNode("Yippee");
+
+    element.appendChild(another);
+
+    alert(element.childNodes.length);
+
+    element.normalize();
+
+    alert(element.childNodes.length);
+
+    alert(element.firstChild.nodeValue);
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script src="vue.min.js"></script>
+
+<body>
+
+  <div id="app">
+    <template v-if='logintype === "username"'>
+      <label> Username </label>
+      <input placeholder='Enter your username' key= 'username'>
+
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder='Enter your email address' key = 'useremail'>
+    </template>
+    </br>
+    <button @click='change'>Toggle login type</button>
+
+  </div>
+
+</body>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      logintype: 'email',
+    },
+    methods: {
+      change: function () {
+        if(this.logintype == 'username'){
+          this.logintype = 'email';
+        }
+        else(
+          this.logintype = 'username'
+        )
+
+       
+
+      }
+
+    }
+  });
+</script>
+
+</html>

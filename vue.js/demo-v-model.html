@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script src="vue.min.js"></script>
+<body>
+  <div id="app">
+    <input type="text" :value='name'>
+
+    <form action='#'>
+      <input type="text" id='username' v-model='user.name'>
+
+      <input type="password" id='password' v-model='user.password'>
+      
+      <button v-on:click="submit">提交</button>
+
+    </form>
+
+  </div>
+</body>
+<script>
+ new Vue({
+  el: '#app',
+  data:{
+    name: '前端开发',
+    user:{name:'1' , password:'12' },
+  },
+  methods:{
+    submit:function(){
+      alert(this.user.name + '  psw' + this.user.password);
+    }
+  }
+});
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RegExp</title>
+
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+<form name="form1" method="get">  
+<p>js正则表达式手机号码验证</p>  
+<p><input type="text" id="mobile" /></p>  
+<p><input type="button" id="btn" value="提交"  onclick = "expressionLanguage()"/></p>  
+</form>  
+<script>  
+
+function expressionLanguage(){  
+    var telreg=/^(11[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[0-9])[0-9]{8}$/gi;  
+    var mobile = document.getElementById("mobile");
+    
+  
+    if(!telreg.test(mobile) ){  
+        
+        alert("请填正确的手机号码"); 
+    }  else{
+         
+        alert("输入的手机号码正确");
+        return false;  
+    }
+};  
+</script>  
+</body>
+</html>
+  
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Loan Calculator</title>
+
+
+</head>
+
+
+<body>
+
+<canvas id = "drawing" width = "200"  height = "200"></canvas>
+
+<script>
+  
+
+  var drawing = document.getElementById("drawing");
+
+  if(drawing.getContext){
+      var context = drawing.getContext('2d');
+
+     context.beginPath();
+
+     context.arc(100, 100, 99, 0, 2 * Math.PI, false);
+
+     context.moveTo(194, 100);
+     context.arc(100, 100, 94, 0, 2 * Math.PI, false);
+
+   
+
+    
+
+     context.font = 'bold 14px Arial';
+     context.textAlign = 'center';
+     context.textBaseline = 'middle';
+
+     var x= 100, y =100,angle = 0, r = 80;
+
+    for (var i = 0 ; i < 12 ; i++ ){
+        angle += (2 * Math.PI) / 12
+        context.fillText( i + 1, x + r * Math.sin(angle), y - r * Math.cos(angle));
+    }
+
+    
+    function displayTime (){
+
+        
+
+       
+            context.stroke();
+    
+        setTimeout(displayTime, 1000);
+    }
+
+    window.onload = displayTime();
+     
+    
+
+
+     context.stroke();
+
+ 
+  }
+
+
+
+
+</script>
+</body>
+</html>

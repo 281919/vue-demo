@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<html></html>
+<head>
+<title>Frameset Example</title>
+
+<style type = "text/css">
+    .colorGreen{
+        font-weight :bold;
+        color: #0f0;
+    }
+</style>
+
+<script type = "text/javascript" src = "EventUtil.js"></script>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+<form  method = "post" action = "javascript:alert('Form submitted!') " id = "myForm">
+    <div>
+        <lable for = "comments">Type numbers:</lable><br>
+        <input type = "text" id = "textNumbers" name = "numbers">
+        </div>
+        <input type = "submit" value = "Submit Form" id = "submit-btn">
+
+</form>
+
+   
+    
+    
+<script type = "text/javascript">
+
+    EventUtil.addHandler(window, "load", function(event){
+
+        var textbox = document.forms[0].elements[0]; 
+
+        EventUtil.addHandler(textbox , "focus", function(event){
+            event = EventUtil.getEvent(event);
+            var target = EventUtil.getTarget(event);
+
+            target.style.backgroundColor = "yellow";
+
+        });
+
+        EventUtil.addHandler (textbox, "blur", function(event){   
+            event = EventUtil.getEvent(event);
+            var target = EventUtil.getTarget(event);
+
+            if(/^[a-zA-Z0-9_-]{4,16}$/.test(target.value)){
+                target.style.backgroundColor = "red";
+
+            } else {
+                target.style.backgroundColor = "";
+            }
+        });
+
+        
+
+        textbox.focus();
+
+    });
+
+    
+</script>
+
+  
+
+
+</body>
+</html>

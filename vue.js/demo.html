@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<style>
+  #tb {
+    width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  #tb th {
+    background-color: #0094ff;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  #tb td {
+   
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+  }
+</style>
+<body>
+
+  <div id="app">
+    <input type="text" v-model='id'> <input type="text" v-model='name'>
+    <button @click='addItem'>添加</button>
+    <table id='tb'>
+      <tr>
+        <th>编号</th>
+        <th>名称</th>
+        <th>创建时间</th>
+        <th>操作</th>
+      </tr>
+      <tr v-for='item in lists'>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.ctime}}</td>
+        <td><a href="javascript:void(0)" @click='delDate(item.id)'>删除</a></td>
+      </tr>
+    </table>
+
+
+  </div>
+  
+</body>
+<script>
+  new Vue({
+    el: app,
+    data: {
+      id: 0,
+      name: '',
+      lists:[
+        {id:1 , name:'奥迪',ctime:new Date()}
+      ]
+    },
+    methods:{
+      addItem:function(){
+       
+        var str =  {id:this.id , name:this.name , ctime:new Date()};
+        this.lists.push(str);
+        this.id++;
+        this.name='';
+      },
+      delDate:function(id){
+        var index = this.lists.findIndex(function(item){
+                return item.id == id;
+        })
+
+        this.lists.splice(index , 1);
+
+      }
+    }
+  });
+</script>
+</html>

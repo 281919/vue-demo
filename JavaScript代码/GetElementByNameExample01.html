@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<html></html>
+<head>
+<title>Frameset Example</title>
+
+<style type = "text/css">
+    .colorGreen{
+        font-weight :bold;
+        color: #0f0;
+    }
+</style>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <fieldset>
+        <legend> Which color do you prefer</legend>
+        <ul>
+    
+            <li><input type = "radio" value = "red" name = "color" id = colorRed>
+            <label for = "colorRed"></label>Red</li>
+            <li><input type = "radio"  value = "green" name = "color" id = colorGreen>
+            <label for = "colorGreen"> Green</label></li>
+            <li><input type = "radio" value = "colorBlue" name = "color" id = colorBlue>
+            <label for = "colorBlue">Blue</label></li>
+        </ul>
+    
+    </fieldset>
+    
+    <input type = "button" value = "Get Radios" onclick = "getRadios()">
+<script>
+    function getRadios(){
+        alert(document.getElementsByName("color").length);
+    }
+</script>
+
+  
+
+
+</body>
+</html>
