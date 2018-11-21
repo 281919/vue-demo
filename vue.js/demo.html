@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="vue.min.js"></script>
+  <script src="vue.min1.js"></script>
 </head>
 <style>
   #tb {
@@ -31,7 +31,8 @@
 <body>
 
   <div id="app">
-    <input type="text" v-model='id'> <input type="text" v-model='name'>
+    <input type="text" v-model='id'> <input type="text" v-model='name' @keydown.f2='addItem'>
+    <input type="text" placeholder = "请输入筛选内容" v-model = "sname">
     <button @click='addItem'>添加</button>
     <table id='tb'>
       <tr>
@@ -40,10 +41,10 @@
         <th>创建时间</th>
         <th>操作</th>
       </tr>
-      <tr v-for='item in lists'>
+      <tr v-for='item in lists | filterBy sname in 'name'>
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
-        <td>{{item.ctime}}</td>
+        <td>{{item.ctime | datefmt}}</td>
         <td><a href="javascript:void(0)" @click='delDate(item.id)'>删除</a></td>
       </tr>
     </table>
@@ -53,6 +54,15 @@
   
 </body>
 <script>
+  Vue.directive('on').keyCodes.f2 = 113;
+  Vue.filter('datefmt',function(value){
+    var res = '';
+    var year = value.getFullYear();
+    var month = value.getMonth() + 1;
+    var day = value.getDate();
+    res = year + "-" + month + "-" + day;
+    return res;
+  });
   new Vue({
     el: app,
     data: {
