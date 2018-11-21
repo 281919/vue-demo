@@ -1,0 +1,36 @@
+客户端Javascript
+
+Window对象是所有客户端JavaScript特性和API的主要接入点
+window.location 指代Location对象
+
+Location对象指定当前显示在窗口中的URL，允许脚本往窗口载入新的URL：
+
+//设置location属性，从而跳转到新的web页面
+window.location = "http://www.oreilly.com";
+
+
+window 对象的方法 ，alert() , setTimeout()
+
+//等待两秒，然后说 hello
+setTimeout(function(){alert("hello world");}, 2000)
+
+window 对象的属性 location （引用Location对象），document（引用Document对象）
+Document对象的方法 getElementById()
+//查找id = "timestamp"的元素
+var timestamp = document.getElementById("timestamp");
+
+getElementById()返回对象的属性和方法：
+
+//如果元素为空，往里面插入当前日期和时间
+if(timestamp.firstChild == null){ 
+    timestamp.appendChild(document.creatTextNode(new Date().toString()))};
+
+Element对象的属性 style , className
+//显示修改目标元素的呈现
+timestamp.style.background = "yellow";
+
+//只改变类，让样式表指定具体内容
+timestamp.className = "highlight";
+
+
+
