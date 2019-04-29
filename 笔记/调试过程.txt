@@ -1,0 +1,38 @@
+﻿调试过程
+
+在控制台查找：
+
+cart.js:18 Uncaught (in promise) TypeError: Cannot read property 'list' of undefined
+    at Vue.<anonymous> (cart.js:18)
+
+在控制台输入：
+
+vm.list //=>undefined
+
+     
+vm      //=>Vue {_uid: 0, _isVue: true, $options: {…}, _renderProxy: Proxy, _self: Vue, …}
+
+vm.productList  
+//=>[__ob__: Observer]
+    length: 0
+    __ob__: Observer {value: Array(0), dep: Dep, vmCount: 0}
+    __proto__: Array
+
+发现productList是个空数组
+
+控制台进入Sources , 找到入口文件 cart.html
+
+Ctrl + P  输入cart.js 定位到cart.js中出错的位置，
+
+在出错的位置打断点，刷新页面
+
+
+
+在控制台输入 res (出错后res无结果，要打断点后，不报错才有结果)
+
+//=>
+body: {status: 1, result: {…}, message: ""}
+
+发现数据封装在 res 的 body 里
+
+res 改为 res.body
