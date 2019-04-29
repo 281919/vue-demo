@@ -1,0 +1,33 @@
+﻿除了基本的运算符外，JavaScript还支持更加复杂的算术运算，这些复杂的运算
+通过作为Math对象的属性定义的函数和常量来实现：
+
+Math.pow(2,53)        // =>9007199254740992: 2的53次幂
+Math.round(0.6)       // =>1.0: 四舍五入
+Math.ceil(0.6)        // =>1.0: 向上求整
+Math.floor(0.6)       // =>0.0: 向下取整
+Math.abs(-5)          // =>5  : 求绝对值
+Math.max(x ,y ,z)     // => 返回最大值
+Math.min(x ,y ,z)     // =>返回最小值
+Math.random()         //生成一个大于等于0小于1.0的伪随机数
+Math.PI               //π：圆周率
+Math.E                //e :自然对数的底数
+Math.sqrt(3)          //3的平方根
+Math.pow(3 , 1/3)     //3的立方根
+Math.sin(0)           //三角函数：还有Math.cos, Math.atan等
+Math.log(10)          // 10的自然对数
+Math.log10(100)       //以10为底100的对数
+Math.log2（512）      //以2为底512的对数
+Math.exp(3)           // e的3次幂
+
+JavaScript中的算术运算在溢出（overflow）,下溢（underflow）或被零整除时不会报错，
+当数字运算结果超过了JavaScript所能表示数字上限（溢出），结果为一个特殊的无穷大（infinity）值，
+在JavaScript中以Infinity表示。同样的，当负数的值超过了JavaScript所能表示的负数范围，结果为负
+无穷大，在JavaScript中以-infinity表示。基于无穷大的加、减、乘和除运算结果还是无穷大（保留正负号）
+
+下溢（underflow）是运算结果无线接近于零并比JavaScript能表示的最小值还小的时候发生的一种情形。这种情况下，
+JavaScript将会返回0，当一个负数发生下溢时，JavaScript返回一个特殊的值“负零”。
+
+
+
+
+ 

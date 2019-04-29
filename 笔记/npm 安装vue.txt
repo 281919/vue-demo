@@ -1,0 +1,16 @@
+﻿npm init
+
+cnpm install vue --save --dev
+
+cnpm install vue-resource --save --dev
+
+
+ls -ls
+
+cd node_modules
+
+ls -ls
+
+cd ..
+
+open node_modul

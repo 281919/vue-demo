@@ -1,0 +1,36 @@
+﻿jQuery的each（）方法和forEach()的区别：
+
+each()返回调用自身的jQuery对象，可用于链式调用
+
+$('div').each(function(idx){              //找到所有div元素，然后遍历它们
+    $('this').prepend(idx + ':');         //prepend()这是向所有匹配元素内部的开始出插入内容的最佳方式
+    if(this.id === "last") return false ;
+
+  });
+
+jQuery方法通常隐式遍历匹配的元素集并统一操作它们。
+需要使用each()的典型场景是需要用不同的方式来操作匹配的元素。
+
+
+map()方法：接收回调函数作为参数，并为jQuery对象中的每一个元素都调用回调函数，
+将回调函数的返回值收集起来，封装成jQuery对象返回（类数组对象）
+
+//找到所有标题元素，映射到它们的id，并转化为真实数组，然后排序
+
+$(":head").map(function(){  
+   return this.id;
+ }).toArray().sort();
+
+index（）方法：接收一个元素作为参数，返回值是该元素在此jQuery对象中的索引值，找不到返回-1
+
+is()方法：接收一个选择器作为参数，如果选中元素中至少有一个匹配该选择器时，则返回true
+
+$("div").each(function(){           
+  if($(this).is(":hidden")) return;  //跳过隐藏元素
+   //对可见元素做点什么
+});
+
+
+
+
+
