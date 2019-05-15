@@ -1,0 +1,59 @@
+﻿jQuery选择器：
+1.常用
+    1）#id
+    2) ele
+    3) .class
+    4) *
+    5) sel1 , sel2  ","表示和， h1 , p h1元素和p元素
+
+2.层级
+   1）ancestor descendant  祖先    后代     选择后代所有节点
+   2) parent > child       父节点  子节点   选择子节点
+   3) prev + next          同级 前一个节点 后一个节点  选择后一个节点   
+   4) prev ~ sinlings      选择后面所有节点 
+
+3.基本
+   1）:first              第一个
+   2) :last               最后一个
+   3) :not                除了什么
+   4) :even               偶数，从0开始
+   5) :odd                奇数
+   6) :eq                 第几个 :eq(2) 第3个 ，索引从0开始
+   7) :gt                 大于  不包含自己，不是大于等于
+   8) :lt                 小于  不包含自己，不是小于等于
+
+4.内容
+   1) :has                div:has(p) 有p元素的div
+   2) :parent             有子节点的元素，空白节点也是子节点
+   3) :empty              空的元素
+
+5.属性       
+   1) [name]                         包含name属性
+   2) [name = user]                  name属性为user
+   3) [name != user]                 name属性不为user
+   4) [name ^= user]                 name属性以user开头
+   5) [name $= user]                 name属性以user结尾
+   6) [name *= user]                 name属性包含user
+   7) [naem = user1][name *= er]     h1[name][age] 有name属性，并且有age属性
+
+6.子元素
+   1) first-child        div h1:first-child  每一个div里的第一个h1       div h1:first  第一个h1
+   2) last-child         div h1:last-child   每一个div里的最后一个h1
+   3) nth-child          div h1:nth-child(2) 每一个div里的第2个h1,索引从1开始
+   4) only-child         duv h1:only-child   只包含一个子元素的h1
+
+7.表单
+   1）:input
+   2) :text
+   3) :password
+   4) :radio
+   5) :checkbox
+   6) :submit
+   7) :reset
+   8) :button
+   9) :file
+   10) :hidden
+
+8.表单属性
+   1) :checked
+   2) :selected
